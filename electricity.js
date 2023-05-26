@@ -10,7 +10,7 @@ function Electricity() {
     }
 
     function getElectricity() {
-        return 
+         
     }
 
     function useAppliance(appliance) {
@@ -18,15 +18,13 @@ function Electricity() {
     }
 
     function getAppliances() {
-        return
+
     }
 
     // extra functionality
     function addAppliance(appliance) {
 
     }
-
-
 
     return {
         topUpElectricity,
