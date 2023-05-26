@@ -34,6 +34,8 @@ If you are working remotely and you are experiencing load shedding please let us
 
 Spend the first 30 minutes of your assessment on planning. Read through all the different scenarios & create a Kanban Board with the tasks you think you need to complete. Email a link to your Kanban board to mentors@projectcodex.co. Create pseudo code using code comments to help you think through what you need to do. Ask for help
 
-Ask if you need help or clarity
+Ask if you need help or clarity. 
 
 And make sure you submit your final links by latest 16h00.
+
+Enjoy! :tada:
