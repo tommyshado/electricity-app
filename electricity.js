@@ -2,7 +2,7 @@ function Electricity() {
 
     // do we want to go with this or array? 
     let appliances = [
-        { 'Stove': 13 }, { 'Kettle': 8 }, { 'Tv': 5 }, { 'Fridge': 15 }
+        { 'Stove': 10 }, { 'Kettle': 5 }, { 'Tv': 3 }, { 'Fridge': 13 }
     ]
 
     function topUpElectricity(amount) {
