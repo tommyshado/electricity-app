@@ -3,11 +3,14 @@
 ## Instructions
 The widget should be able to: 
 *  Allow top-up electricity
+    * R10 - 7 units
+    * R30 - 21 units
+    * R50 - 35 units
 * Use electricity with the given appliances. 
-    * Tv - 3
-    * Kattle - 5
-    * Fridge - 13 
-    * Stove - 10
+    * Tv - 3 units
+    * Kattle - 5 units
+    * Fridge - 13 units
+    * Stove - 10 units
 * Don't allow appliance usage if not enough electricity
 * Summary of electricity available
 

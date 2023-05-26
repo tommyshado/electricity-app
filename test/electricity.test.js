@@ -1,6 +1,6 @@
 describe("The buy electricity app", function () {
 
-    it("Should allow a user to top-up electricity", function () {
+    it("should allow a user to top-up electricity", function () {
 
         let electricity = Electricity();
 
@@ -9,7 +9,7 @@ describe("The buy electricity app", function () {
         assert.equal(electricity.getElectricity, 40);
     })
 
-    it("Should get all the appliences", function () {
+    it("should get all the appliences", function () {
 
         let electricity = Electricity();
 
@@ -19,12 +19,11 @@ describe("The buy electricity app", function () {
 
     })
 
-    it("Should allow appliences usage", function () {
+    it("should allow appliences usage", function () {
 
         let electricity = Electricity();
 
         electricity.topUpElectricity(50);
-
 
         electricity.useAppliance('Tv');
         electricity.useAppliance('Stove');
@@ -34,7 +33,7 @@ describe("The buy electricity app", function () {
 
     })
 
-    it("Should not allow applience usage if not enough electricity", function () {
+    it("should not allow applience usage if not enough electricity", function () {
 
         let electricity = Electricity();
 
