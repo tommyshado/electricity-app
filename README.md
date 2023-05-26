@@ -6,6 +6,7 @@ The widget should be able to:
     * R10 - 7 units
     * R30 - 21 units
     * R50 - 35 units
+    
 * Use electricity with the given appliances. 
     * Tv - 3 units
     * Kattle - 5 units
