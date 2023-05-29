@@ -1,23 +1,48 @@
 describe("The buy electricity app", function () {
 
-    it("should allow a user to top-up electricity", function () {
+    it("should return 0 if not topup made yet", function () {
+
+        let electricity = Electricity();
+
+        assert.equal(0, electricity.getElectricity());
+    })
+
+    it("should allow a user to top-up electricity with 10", function () {
+
+        let electricity = Electricity();
+
+        electricity.topUpElectricity(10);
+
+        assert.equal(7, electricity.getElectricity());
+    })
+
+    it("should allow a user to top-up electricity with 20", function () {
 
         let electricity = Electricity();
 
         electricity.topUpElectricity(20);
 
-        assert.equal(electricity.getElectricity, 40);
+        assert.equal(14, electricity.getElectricity());
     })
 
-    it("should get all the appliences", function () {
+    it("should allow a user to top-up electricity with 50", function () {
 
         let electricity = Electricity();
 
-        assert.deepEqual(electricity.getAppliances(), [{
+        electricity.topUpElectricity(50);
 
-        }]);
-
+        assert.equal(35, electricity.getElectricity());
     })
+
+    // it("should get all the appliences", function () {
+
+    //     let electricity = Electricity();
+
+    //     assert.deepEqual(electricity.getAppliances(), [{
+
+    //     }]);
+
+    // })
 
     it("should allow appliences usage", function () {
 

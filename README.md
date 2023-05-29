@@ -6,8 +6,8 @@ The widget should be able to:
 Allow a user to top-up electricity:
 
 * R10 - 7 units
-* R30 - 21 units
-* R50 - 43 units
+* R20 - 14 units
+* R50 - 35 units
     
 The widget support the appliance listed below also see the electricity consumption in units.
 
