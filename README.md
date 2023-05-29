@@ -5,24 +5,26 @@ The widget should be able to:
 
 Allow a user to top-up electricity:
 
-* R10 - 7 units
-* R20 - 14 units
-* R50 - 35 units
+* R10 buys 7 units
+* R20 buys 14 units
+* R50 buys 35 units
     
 The widget support the appliance listed below also see the electricity consumption in units.
 
 Supported appliances:
 
-* TV - 3 units
-* Kettle - 5 units
-* Fridge - 13 units
-* Stove - 10 units
+* The TV uses 3 units at a time (1 button click)
+* The Kettle uses 5 units at a time
+* The Fridge uses  13 units at a time
+* The Stove uses 10 units at a time
 
 Don't allow appliance usage if there is not enough electricity available to use the appliance in question.
 
-So a summary of electricity available - the topup and using of electricity should reflect accordingly at **Unis available**. Keep track of units bought and the total amount spent on electricity.
+Show a summary of electricity available - the topup and using of electricity should reflect accordingly at **Units available**. 
 
-If the advance has been used show a green tick. And advance can only be used once, until it has been paid back. Then is can be used again. Ensure the total amount spent calculation take the advance amounts into account correctly.
+Keep track of units bought and the total amount spent on electricity.
+
+If the advance has been used show a green tick. An advance can only be used once, and can only be used again when the whole advance has been paid back. Ensure the total amount spent calculation take the advance amounts into account correctly.
 
 ## Files 
 
@@ -31,7 +33,7 @@ If the advance has been used show a green tick. And advance can only be used onc
 * Implement the DOM functionality in the `electricity.dom.js` file that is needed to make the widget in `index.html` functional.
 
 ## Add localStorage
-Once the widget is done store the electricity balance in localStorage. Be sure  that the data is shown correctly after a refresh.
+Once the widget is done store the electricity balance in localStorage. Be sure  that the data is shown correctly after a refresh. The advance should be stored in localStorage - in fact all the totals of the app.
 
 ## Fork & clone 
 Fork and clone this repo. 

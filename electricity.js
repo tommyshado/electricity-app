@@ -13,6 +13,10 @@ function Electricity() {
          
     }
 
+    /*
+    * return true and substract from unit available if there is enough unit to use the appliance
+    * other wise return false and do nothing.
+    */
     function useAppliance(appliance) {
 
     }
