@@ -9,7 +9,7 @@ function Electricity() {
 
     }
 
-    function getElectricity() {
+    function getUnitsAvailable() {
          
     }
 
@@ -17,20 +17,36 @@ function Electricity() {
 
     }
 
-    function getAppliances() {
+    // function getAppliances() {
+
+    // }
+
+    // extra functionality
+    // function addAppliance(appliance) {
+
+    // }
+
+    function advanceTaken() {
 
     }
 
-    // extra functionality
-    function addAppliance(appliance) {
+    function totalAmountSpent() {
+
+    }
+
+    function totalUnitsBought(){
 
     }
 
     return {
+        advanceTaken,
         topUpElectricity,
-        getElectricity,
+        getUnitsAvailable,
         useAppliance,
-        getAppliances,
-        addAppliance
+        // getAppliances,
+        // addAppliance,
+        totalAmountSpent,
+        totalUnitsBought
+
     }
 }
