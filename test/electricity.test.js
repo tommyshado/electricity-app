@@ -79,7 +79,7 @@ describe("The buy electricity app", function () {
         electricity.topUpElectricity('advance');
         electricity.topUpElectricity(20);
 
-        assert.isTrue(true, electricity.useAppliance('TV'));
+        assert.isTrue(electricity.useAppliance('TV'));
 
         // advanced is valid now
         electricity.topUpElectricity('advance');
@@ -92,8 +92,8 @@ describe("The buy electricity app", function () {
         const electricity = Electricity();
 
         electricity.topUpElectricity(50);
-        assert.isTrue(true, electricity.useAppliance('TV'));
-        assert.isTrue(true, electricity.useAppliance('Kettle'));
+        assert.isTrue(electricity.useAppliance('TV'));
+        assert.isTrue(electricity.useAppliance('Kettle'));
 
         assert.equal(20, electricity.getElectricity());
 
@@ -105,10 +105,10 @@ describe("The buy electricity app", function () {
 
         electricity.topUpElectricity(10);
 
-        assert.isTrue(true, electricity.useAppliance('TV'));
-        assert.isFalse(false, electricity.useAppliance('Stove'));
-        assert.isFalse(false, electricity.useAppliance('TV'));
-        assert.isFalse(false, electricity.useAppliance('TV'));
+        assert.isTrue(electricity.useAppliance('TV'));
+        assert.isFalse(electricity.useAppliance('Stove'));
+        assert.isFalse(electricity.useAppliance('TV'));
+        assert.isFalse(electricity.useAppliance('TV'));
 
         assert.equal(0, electricity.getElectricity());
 
@@ -119,16 +119,16 @@ describe("The buy electricity app", function () {
         const electricity = Electricity();
 
         electricity.topUpElectricity(10);
-        assert.isTrue(true, electricity.useAppliance('TV'));
+        assert.isTrue(electricity.useAppliance('TV'));
 
         // not enough electricity units (4 available)
-        assert.isFalse(false, electricity.useAppliance('Stove'));
-        assert.isFalse(false, electricity.useAppliance('Fridge'));
-        assert.isFalse(false, electricity.useAppliance('Kettle'));
+        assert.isFalse(electricity.useAppliance('Stove'));
+        assert.isFalse(electricity.useAppliance('Fridge'));
+        assert.isFalse(electricity.useAppliance('Kettle'));
 
         electricity.topUpElectricity('advance');
-        assert.isTrue(true, electricity.useAppliance('Fridge'));
-        assert.isTrue(true, electricity.useAppliance('Stove'));
+        assert.isTrue(electricity.useAppliance('Fridge'));
+        assert.isTrue(electricity.useAppliance('Stove'));
 
         assert.equal(2, electricity.getElectricity());
 
