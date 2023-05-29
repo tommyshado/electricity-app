@@ -43,7 +43,7 @@ describe("The buy electricity app", function () {
         electricity.topUpElectricity(50);
         electricity.topUpElectricity(20);
 
-        assert.equal(73, electricity.getUnitsAvailable());
+        assert.equal(70, electricity.getUnitsAvailable());
     })
 
     it("should not allow a user to take advance more than once without paying the balance", function () {
@@ -64,7 +64,7 @@ describe("The buy electricity app", function () {
         electricity.topUpElectricity(50);
         electricity.topUpElectricity('advance');
 
-        assert.equal(35, electricity.getUnitsAvailable());
+        assert.equal(56, electricity.getUnitsAvailable());
     })
 
 
@@ -73,18 +73,24 @@ describe("The buy electricity app", function () {
         const electricity = Electricity();
 
         electricity.topUpElectricity('advance');
+        assert.isTrue(electricity.advanceTaken());
+
         electricity.topUpElectricity(20);
+        assert.equal(21, electricity.getUnitsAvailable());
+        assert.isTrue(electricity.advanceTaken());
 
         // advanced ignored as you still owe R10
         electricity.topUpElectricity('advance');
         electricity.topUpElectricity(20);
+        assert.isFalse(electricity.advanceTaken());
+        assert.equal(28, electricity.getUnitsAvailable());
 
         assert.isTrue(electricity.useAppliance('TV'));
 
         // advanced is valid now
         electricity.topUpElectricity('advance');
 
-        assert.equal(25, electricity.getUnitsAvailable());
+        assert.equal(46, electricity.getUnitsAvailable());
     })
 
     it("should allow appliances usage", function () {
@@ -95,7 +101,7 @@ describe("The buy electricity app", function () {
         assert.isTrue(electricity.useAppliance('TV'));
         assert.isTrue(electricity.useAppliance('Kettle'));
 
-        assert.equal(20, electricity.getUnitsAvailable());
+        assert.equal(27, electricity.getUnitsAvailable());
 
     })
 
@@ -106,11 +112,17 @@ describe("The buy electricity app", function () {
         electricity.topUpElectricity(10);
 
         assert.isTrue(electricity.useAppliance('TV'));
+        assert.equal(4, electricity.getUnitsAvailable());
+        
         assert.isFalse(electricity.useAppliance('Stove'));
-        assert.isFalse(electricity.useAppliance('TV'));
+        assert.equal(4, electricity.getUnitsAvailable());
+        
+        assert.isTrue(electricity.useAppliance('TV'));
+        assert.equal(1, electricity.getUnitsAvailable());
+
         assert.isFalse(electricity.useAppliance('TV'));
 
-        assert.equal(0, electricity.getUnitsAvailable());
+        assert.equal(1, electricity.getUnitsAvailable());
 
     })
 
@@ -132,5 +144,33 @@ describe("The buy electricity app", function () {
 
         assert.equal(2, electricity.getUnitsAvailable());
 
-    })
+    });
+
+    it("should calculate the total amount spent", function() {
+        const electricity = Electricity();
+        
+        // electricity.topUpElectricity(20);  // 14
+        electricity.topUpElectricity(10);  // 7
+        electricity.topUpElectricity(50);  // 35
+        electricity.topUpElectricity(20);  // 14
+
+        assert.equal(80, electricity.totalAmountSpent());
+    });
+
+    it("should calculate the total amount units bought", function() {
+        const electricity = Electricity();
+
+        electricity.topUpElectricity(20);  // 14
+        electricity.topUpElectricity(10);  // 7
+        electricity.topUpElectricity(50);  // 35
+        electricity.topUpElectricity(20);  // 14
+
+        electricity.useAppliance("TV")
+        electricity.useAppliance("Kettle")
+
+        assert.equal(100, electricity.totalAmountSpent());
+        assert.equal(62, electricity.getUnitsAvailable());
+        assert.equal(70, electricity.totalUnitsBought());
+    });
+
 })

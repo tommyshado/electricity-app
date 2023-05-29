@@ -43,10 +43,17 @@ button {
 	margin-top: 2em;
 }
 
+.unitsAvailable {
+	font-size: 200%;
+}
 
+.hidden {
+	display: none;
+}
 
 @media (min-width: 768px) {
 	.sections {
 		display: flex;
 	}
 }
+
