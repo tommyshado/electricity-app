@@ -46,48 +46,48 @@ describe("The buy electricity app", function () {
         assert.equal(73, electricity.getElectricity());
     })
 
-    it("should not allow a user to take advanced more than once without paying the balance", function () {
+    it("should not allow a user to take advance more than once without paying the balance", function () {
 
         let electricity = Electricity();
 
-        electricity.topUpElectricity('advanced');
-        electricity.topUpElectricity('advanced');
+        electricity.topUpElectricity('advance');
+        electricity.topUpElectricity('advance');
 
         assert.equal(21, electricity.getElectricity());
     })
 
-    it("should allow a user to take advanced and pay for the advanced", function () {
+    it("should allow a user to take advance and pay for the advance", function () {
 
         let electricity = Electricity();
 
-        electricity.topUpElectricity('advanced');
+        electricity.topUpElectricity('advance');
         electricity.topUpElectricity(50);
-        electricity.topUpElectricity('advanced');
+        electricity.topUpElectricity('advance');
 
         assert.equal(35, electricity.getElectricity());
     })
 
 
-    it("should allow a user to take advanced and pay for the advanced and use appliances", function () {
+    it("should allow a user to take advance and pay for the advance and use appliances", function () {
 
         let electricity = Electricity();
 
-        electricity.topUpElectricity('advanced');
+        electricity.topUpElectricity('advance');
         electricity.topUpElectricity(20);
 
         // advanced ignored as you still owe R10
-        electricity.topUpElectricity('advanced');
+        electricity.topUpElectricity('advance');
         electricity.topUpElectricity(20);
 
         electricity.useAppliance('Tv');
 
         // advanced is valid now
-        electricity.topUpElectricity('advanced');
+        electricity.topUpElectricity('advance');
 
         assert.equal(25, electricity.getElectricity());
     })
 
-    it("should allow appliences usage", function () {
+    it("should allow appliances usage", function () {
 
         let electricity = Electricity();
 
@@ -101,7 +101,7 @@ describe("The buy electricity app", function () {
 
     })
 
-    it("should not allow applience usage if not enough electricity", function () {
+    it("should not allow appliance usage if not enough electricity", function () {
 
         let electricity = Electricity();
 
@@ -113,6 +113,26 @@ describe("The buy electricity app", function () {
         electricity.useAppliance('Fridge');
 
         assert.equal(electricity.getElectricity, 0);
+
+    })
+
+    it("should not allow appliance usage if not enough electricity", function () {
+
+        let electricity = Electricity();
+
+        electricity.topUpElectricity(10);
+
+        electricity.useAppliance('Tv');
+
+        // not enough electricity units (4 available)
+        electricity.useAppliance('Stove');
+        electricity.useAppliance('Kettle');
+
+        electricity.topUpElectricity('advance');
+        electricity.useAppliance('Fridge');
+        electricity.useAppliance('Stove');
+
+        assert.equal(electricity.getUnitsAvailable(), 2);
 
     })
 })
