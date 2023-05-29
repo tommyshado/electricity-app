@@ -2,14 +2,14 @@ describe("The buy electricity app", function () {
 
     it("should return 0 if not topup made yet", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         assert.equal(0, electricity.getElectricity());
     })
 
     it("should allow a user to top-up electricity with 10", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         electricity.topUpElectricity(10);
 
@@ -18,7 +18,7 @@ describe("The buy electricity app", function () {
 
     it("should allow a user to top-up electricity with 20", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         electricity.topUpElectricity(20);
 
@@ -27,7 +27,7 @@ describe("The buy electricity app", function () {
 
     it("should allow a user to top-up electricity with 50", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         electricity.topUpElectricity(50);
 
@@ -36,7 +36,7 @@ describe("The buy electricity app", function () {
 
     it("should allow a user to top-up electricity multiple times", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         electricity.topUpElectricity(20);
         electricity.topUpElectricity(10);
@@ -48,7 +48,7 @@ describe("The buy electricity app", function () {
 
     it("should not allow a user to take advance more than once without paying the balance", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         electricity.topUpElectricity('advance');
         electricity.topUpElectricity('advance');
@@ -58,7 +58,7 @@ describe("The buy electricity app", function () {
 
     it("should allow a user to take advance and pay for the advance", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         electricity.topUpElectricity('advance');
         electricity.topUpElectricity(50);
@@ -70,7 +70,7 @@ describe("The buy electricity app", function () {
 
     it("should allow a user to take advance and pay for the advance and use appliances", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         electricity.topUpElectricity('advance');
         electricity.topUpElectricity(20);
@@ -89,7 +89,7 @@ describe("The buy electricity app", function () {
 
     it("should allow appliances usage", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         electricity.topUpElectricity(50);
 
@@ -103,7 +103,7 @@ describe("The buy electricity app", function () {
 
     it("should not allow appliance usage if not enough electricity", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         electricity.topUpElectricity(10);
 
@@ -118,7 +118,7 @@ describe("The buy electricity app", function () {
 
     it("should allow electricity usage after topping up with advance", function () {
 
-        let electricity = Electricity();
+        const electricity = Electricity();
 
         electricity.topUpElectricity(10);
 
