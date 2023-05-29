@@ -8,6 +8,7 @@ Allow a user to top-up electricity:
 * R10 buys 7 units
 * R20 buys 14 units
 * R50 buys 35 units
+* And advance of R30 buys 21 units - can only be used once. Must then be paid back to use again.
     
 The widget support the appliance listed below also see the electricity consumption in units.
 
