@@ -2,25 +2,33 @@
 
 ## Instructions
 The widget should be able to: 
-*  Allow top-up electricity
-    * R10 - 7 units
-    * R30 - 21 units
-    * R50 - 35 units
+
+Allow a user to top-up electricity:
+
+* R10 - 7 units
+* R30 - 21 units
+* R50 - 43 units
     
-* Use electricity with the given appliances. 
-    * Tv - 3 units
-    * Kattle - 5 units
-    * Fridge - 13 units
-    * Stove - 10 units
-* Don't allow appliance usage if not enough electricity
-* Summary of electricity available
+The widget support the appliance listed below also see the electricity consumption in units.
+
+Supported appliances:
+
+* TV - 3 units
+* Kettle - 5 units
+* Fridge - 13 units
+* Stove - 10 units
+
+Don't allow appliance usage if there is not enough electricity available to use the appliance in question.
+
+So a summary of electricity available - the topup and using of electricity should reflect accordingly at **Unis available**. Keep track of units bought and the total amount spent on electricity.
+
+If the advance has been used show a green tick. And advance can only be used once, until it has been paid back. Then is can be used again. Ensure the total amount spent calculation take the advance amounts into account correctly.
 
 ## Files 
+
 * Make all the unit tests pass in `electricity.test.js`. Run test from `test/index.html`
-* HTML & CSS in the `index.html`
-* Failing unit tests that need to stop failing by implementing the electricity Factory Function in `electricity.js`. 
-* Factory Function skeleton is in the `electricity.js`
-* Implement DOM functionality in the `electricity.dom.js` file
+* Fix failing unit tests by implementing the `Electricity` Factory Function in `electricity.js`. 
+* Implement the DOM functionality in the `electricity.dom.js` file that is needed to make the widget in `index.html` functional.
 
 ## Add localStorage
 Once the widget is done store the electricity balance in localStorage. Be sure  that the data is shown correctly after a refresh.
