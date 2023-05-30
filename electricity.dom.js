@@ -7,7 +7,12 @@ const unitsBought = document.querySelector('.totalUnits');
 const totalAmountSpent = document.querySelector('.totalAmount');
 
 // buttons
+
+// button for buying electricty
 const buttonForBuying = document.querySelector('.btn');
+
+// button for using electricity
+const usageOfElectricity = document.querySelector('.useNow');
 
 // variables for local storage
 var boughtUnits = 0;
