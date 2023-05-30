@@ -53,7 +53,7 @@ buttonForBuying.addEventListener('click', function() {
         totalAmountSpent.innerText = electricity.totalAmountSpent();
 
         // storing units bought in the local storage
-        localStorage.setItem('unitsAvailable', unitsAvailable.innerText);
+        localStorage.setItem('unitsBought', unitsAvailable.innerText);
         localStorage.setItem('amountSpent', totalAmountSpent.innerText);
     };
 });
