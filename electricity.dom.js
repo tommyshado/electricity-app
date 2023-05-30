@@ -12,6 +12,16 @@ const buttonForBuying = document.querySelector('.btn');
 // Factory Function instance 
 const electricity =  Electricity();
 
+// variables for local storage
+var boughtUnits = 0;
+
+// local storage code 
+if (localStorage['unitsBought']) {
+    unitsBought.innerText = localStorage.getItem('unitsBought');
+    boughtUnits = unitsBought.innerText;
+}
+
+
 
 // DOM events here 
 buttonForBuying.addEventListener('click', function() {
@@ -20,5 +30,7 @@ buttonForBuying.addEventListener('click', function() {
     if (topUpElectricity) {
         electricity.topUpElectricity(topUpElectricity.value);
         unitsBought.innerText = electricity.getUnitsAvailable();
+        // storing units bought in the local storage
+        localStorage.setItem('unitsBought', unitsBought.innerText);
     };
 });
