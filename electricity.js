@@ -51,10 +51,12 @@ function Electricity(boughtUnits, unitsAval) {
         }
 
         if (amountOfAdvance === 'advance' && advanceGiven === false) {
-                unitsAvailable += 21.00;
-                totalOfUnitsBought += 21.00;
-                advance += 21.00;
-                advanceGiven = true;
+            // update the values
+            unitsAvailable += 21.00;
+            totalOfUnitsBought += 21.00;
+            advance += 21.00;
+            // set the advanceGiven variable to true, because a client is given an advance
+            advanceGiven = true;
         }
 
     }
