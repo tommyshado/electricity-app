@@ -9,13 +9,13 @@ function Electricity(boughtUnits, unitsAval) {
     };
 
     // create a variable to keep track of the amount bought for electricity
-    let unitsAvailable = boughtUnits || unitsAval || 0;
+    let unitsAvailable = unitsAval || 0;
 
     // create a variable to keep track of the current amount of electricity
     let currentAmountOfElectrity = 0;
 
     // create another variable to keep track of the units that are bought without decrementing with appliaces values
-    let totalOfUnitsBought = 0;
+    let totalOfUnitsBought = boughtUnits || 0;
 
     function topUpElectricity(amount, advance) {
         // convert the string we will get from the dom from the amount reference
