@@ -50,18 +50,12 @@ function Electricity(boughtUnits, unitsAval) {
             totalOfUnitsBought += 35.00;
         }
 
-        console.log(advanceGiven);
-
         if (amountOfAdvance === 'advance' && advanceGiven === false) {
-            // if (!advanceTaken()) {
                 unitsAvailable += 21.00;
                 totalOfUnitsBought += 21.00;
                 advance += 21.00;
-                advanceGiven = true
-            // }
+                advanceGiven = true;
         }
-
-        console.log(unitsAvailable);
 
     }
 
