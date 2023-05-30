@@ -14,12 +14,20 @@ function Electricity(boughtUnits, unitsAval) {
     // create a variable to keep track of the current amount of electricity
     let currentAmountOfElectrity = 0;
 
+    // variable for the advance
+    let advance = 0;
+
+    let advanceGiven = false;
+
     // create another variable to keep track of the units that are bought without decrementing with appliaces values
     let totalOfUnitsBought = boughtUnits || 0;
 
-    function topUpElectricity(amount, advance) {
+    function topUpElectricity(amount) {
         // convert the string we will get from the dom from the amount reference
         let amountNumber = Number(amount);
+
+        let amountOfAdvance = amount;
+
         // reassign a variable that will keep track of the amount
         currentAmountOfElectrity += amountNumber;
         // create conditional statements to check the amount from the UI whether it's value is 10, 20 and 50
@@ -41,6 +49,19 @@ function Electricity(boughtUnits, unitsAval) {
             unitsAvailable += 35.00;
             totalOfUnitsBought += 35.00;
         }
+
+        console.log(advanceGiven);
+
+        if (amountOfAdvance === 'advance' && advanceGiven === false) {
+            // if (!advanceTaken()) {
+                unitsAvailable += 21.00;
+                totalOfUnitsBought += 21.00;
+                advance += 21.00;
+                advanceGiven = true
+            // }
+        }
+
+        console.log(unitsAvailable);
 
     }
 
@@ -73,7 +94,12 @@ function Electricity(boughtUnits, unitsAval) {
         
     }
 
+
     function advanceTaken() {
+        if (advanceGiven) {
+            return true;
+        }
+        return false;
     }
 
     function totalAmountSpent() {
