@@ -1,4 +1,4 @@
-function Electricity() {
+function Electricity(boughtUnits) {
 
     // do we want to go with this or array? 
     let appliances = {
@@ -9,7 +9,7 @@ function Electricity() {
     };
 
     // create a variable to keep track of the amount bought for electricity
-    let unitsAvailable = 0;
+    let unitsAvailable = boughtUnits || 0;
 
     function topUpElectricity(amount) {
         // convert the string we will get from the dom from the amount reference

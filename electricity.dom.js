@@ -8,19 +8,17 @@ const totalAmountSpent = document.querySelector('.totalAmount');
 
 // buttons
 const buttonForBuying = document.querySelector('.btn');
-
-// Factory Function instance 
-const electricity =  Electricity();
-
 // variables for local storage
 var boughtUnits = 0;
 
 // local storage code 
 if (localStorage['unitsBought']) {
-    unitsBought.innerText = localStorage.getItem('unitsBought');
-    boughtUnits = unitsBought.innerText;
+    boughtUnits = Number(localStorage.getItem('unitsBought'));
+    unitsBought.innerText = boughtUnits.toFixed(2);
 }
 
+// Factory Function instance 
+const electricity =  Electricity(boughtUnits);
 
 
 // DOM events here 
