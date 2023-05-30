@@ -10,11 +10,17 @@ const totalAmountSpent = document.querySelector('.totalAmount');
 const buttonForBuying = document.querySelector('.btn');
 // variables for local storage
 var boughtUnits = 0;
+var unitsAval = 0;
 
 // local storage code 
 if (localStorage['unitsBought']) {
     boughtUnits = Number(localStorage.getItem('unitsBought'));
     unitsBought.innerText = boughtUnits.toFixed(2);
+}
+
+if (localStorage['unitsAvailable']) {
+    unitsAval = Number(localStorage.getItem('unitsAvailable'));
+    unitsAvailable.innerText = unitsAval.toFixed(2);
 }
 
 // Factory Function instance 
@@ -28,7 +34,9 @@ buttonForBuying.addEventListener('click', function() {
     if (topUpElectricity) {
         electricity.topUpElectricity(topUpElectricity.value);
         unitsBought.innerText = electricity.getUnitsAvailable();
+        unitsAvailable.innerText = electricity.getUnitsAvailable();
         // storing units bought in the local storage
         localStorage.setItem('unitsBought', unitsBought.innerText);
+        localStorage.setItem('unitsAvailable', unitsAvailable.innerText);
     };
 });
