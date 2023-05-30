@@ -1,7 +1,5 @@
 // DOM element(s) references
 
-// radio button for top up electricity
-const topUpElectricity = document.querySelector("input[name='buyElectricity']");
 
 // references to the electricity elements section
 const unitsAvailable = document.querySelector('.unitsAvailable');
@@ -17,7 +15,10 @@ const electricity =  Electricity();
 
 // DOM events here 
 buttonForBuying.addEventListener('click', function() {
+    // radio button for top up electricity
+    const topUpElectricity = document.querySelector("input[name='buyElectricity']:checked");
     if (topUpElectricity) {
-
+        electricity.topUpElectricity(topUpElectricity.value);
+        unitsBought.innerText = electricity.getUnitsAvailable();
     };
 });
