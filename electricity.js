@@ -21,23 +21,23 @@ function Electricity() {
         // and also check whether a client selects an advance of 30
         if (amountNumber === 10) {
             // assign the variable amountOfElectricity with 7 units
-            amountOfElectricity = 7;
+            amountOfElectricity = 7.00;
         }
 
         if (amountNumber === 20) {
             // assign the variable amountOfElectricity with 14 units
-            amountOfElectricity = 14;
+            amountOfElectricity = 14.00;
         }
 
         if (amountOfElectricity === 50) {
             // assign the variable amountOfElectricity with 35 units
-            amountOfElectricity = 35;
+            amountOfElectricity = 35.00;
         }
 
         if (amountOfElectricity === 30) {
             if (advanceElectricity[amountOfElectricity] === undefined) {
                 // assign the variable amountOfElectricity with 21 units
-                amountOfElectricity = 21;
+                amountOfElectricity = 21.00;
                 // we will get this for the dom
                 advanceElectricity[amountOfElectricity] = 1;
             } else {
