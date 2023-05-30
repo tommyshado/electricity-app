@@ -1,6 +1,17 @@
 # electricity-app
 
-Create a widget that allows a user to keep track of electricity usage. A user can top-up electricity units for amounts selected. And then select the appliance to use. Each appliance use a different amount of units. Users can take an electricity advance. The advance will need to be paid back on subsequent top-ups.
+Create a widget that allows a user to keep track of electricity usage.
+
+A user can:
+
+* top-up electricity units for a selected amount. 
+* and select an appliance to use. 
+
+Note:
+
+* Each appliance use a different amount of units. 
+* Users can take an electricity advance. 
+* The advance will need to be paid back on subsequent top-ups.
 
 ## Instructions
 
