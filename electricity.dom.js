@@ -41,7 +41,7 @@ buttonForBuying.addEventListener('click', function() {
     if (topUpElectricity) {
         electricity.topUpElectricity(topUpElectricity.value);
         // setting units bought by the client in the unitsBought element reference
-        unitsBought.innerText = electricity.getUnitsAvailable();
+        unitsBought.innerText = electricity.totalUnitsBought();
         // setting the amount units available in the unitsAvailable element reference
         unitsAvailable.innerText = electricity.getUnitsAvailable();
         // setting the amount a client will spend in the totalAmountSpent element reference
