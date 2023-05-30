@@ -1,15 +1,15 @@
-function Electricity(boughtUnits) {
+function Electricity(boughtUnits, unitsAval) {
 
     // do we want to go with this or array? 
     let appliances = {
-        'Stove': 10, 
+        'stove': 10, 
         'Kettle': 5, 
         'TV': 3, 
         'Fridge': 13
     };
 
     // create a variable to keep track of the amount bought for electricity
-    let unitsAvailable = boughtUnits || 0;
+    let unitsAvailable = boughtUnits || unitsAval || 0;
 
     // create a variable to keep track of the current amount of electricity
     let currentAmountOfElectrity = 0;
@@ -54,19 +54,22 @@ function Electricity(boughtUnits) {
     */
     function useAppliance(appliance) {
         if (unitsAvailable > 0) {
-            if (appliance === 'Stove') {
-                unitsAvailable -= 10;
-            }
-            if (appliance === 'Kettle') {
-                unitsAvailable -= 5;
-            }
-            if (appliance === 'TV') {
-                unitsAvailable -= 3;
-            }
-            if (appliance === 'Fridge') {
-                unitsAvailable -= 13;
+            for (const applianceKey in appliances) {
+                if (applianceKey === "stove" && appliance === "stove") {
+                    unitsAvailable -= appliances[applianceKey];
+                }
+                if (applianceKey === "Kettle" && appliance === "Kettle") {
+                    unitsAvailable -= appliances[applianceKey];
+                }
+                if (applianceKey === "TV" && appliance === "TV") {
+                    unitsAvailable -= appliances[applianceKey];
+                }
+                if (appliance === "Fridge" && appliance === "Fridge") {
+                    unitsAvailable -= appliances[applianceKey];
+                }
             }
         }
+
         
     }
 
