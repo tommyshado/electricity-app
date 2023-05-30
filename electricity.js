@@ -11,9 +11,14 @@ function Electricity(boughtUnits) {
     // create a variable to keep track of the amount bought for electricity
     let unitsAvailable = boughtUnits || 0;
 
+    // create a variable to keep track of the current amount of electricity
+    let currentAmountOfElectrity = 0;
+
     function topUpElectricity(amount) {
         // convert the string we will get from the dom from the amount reference
         let amountNumber = Number(amount);
+        // reassign a variable that will keep track of the amount
+        currentAmountOfElectrity += amountNumber;
         // create conditional statements to check the amount from the UI whether it's value is 10, 20 and 50
         // and also check whether a client selects an advance of 30
         if (amountNumber === 10) {
@@ -50,7 +55,10 @@ function Electricity(boughtUnits) {
     function advanceTaken() {
     }
 
+    let amount = 0;
+
     function totalAmountSpent() {
+        return currentAmountOfElectrity.toFixed(2);
     }
 
     function totalUnitsBought(){
