@@ -5,7 +5,7 @@
 const unitsAvailable = document.querySelector('.unitsAvailable');
 const unitsBought = document.querySelector('.totalUnits');
 const totalAmountSpent = document.querySelector('.totalAmount');
-const advanceAmount = document.querySelector('.advance');
+const advanceTaken =document.querySelector('.advanceTaken');
 
 // buttons
 
@@ -52,7 +52,6 @@ buttonForBuying.addEventListener('click', function() {
         unitsAvailable.innerText = electricity.getUnitsAvailable();
         // setting the amount a client will spend in the totalAmountSpent element reference
         totalAmountSpent.innerText = electricity.totalAmountSpent();
-
         // storing units bought in the local storage
         localStorage.setItem('unitsBought', unitsAvailable.innerText);
         localStorage.setItem('amountSpent', totalAmountSpent.innerText);
