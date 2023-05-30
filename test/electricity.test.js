@@ -1,3 +1,14 @@
+
+/**
+ * DON'T change this file
+ * 
+ * if you find a reason for this file to be changed - such as a typo or calculation issue
+ * 
+ * please email - mentors@projectcodex.co - to discuss the required changes
+ * 
+ * DON'T change this file
+ * 
+ */
 describe("The buy electricity app", function () {
 
     it("should return 0 if not topup made yet", function () {
