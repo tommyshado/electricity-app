@@ -14,7 +14,10 @@ function Electricity(boughtUnits) {
     // create a variable to keep track of the current amount of electricity
     let currentAmountOfElectrity = 0;
 
-    function topUpElectricity(amount) {
+    // create another variable to keep track of the units that are bought without decrementing with appliaces values
+    let totalOfUnitsBought = 0;
+
+    function topUpElectricity(amount, advance) {
         // convert the string we will get from the dom from the amount reference
         let amountNumber = Number(amount);
         // reassign a variable that will keep track of the amount
@@ -24,24 +27,25 @@ function Electricity(boughtUnits) {
         if (amountNumber === 10) {
             // assign the variable amountOfElectricity with 7 units
             unitsAvailable += 7.00;
+            totalOfUnitsBought += 7.00;
         }
 
         if (amountNumber === 20) {
             // assign the variable amountOfElectricity with 14 units
             unitsAvailable += 14.00;
+            totalOfUnitsBought += 14.00;
         }
         
         if (amountNumber === 50) {
             // assign the variable amountOfElectricity with 35 units
             unitsAvailable += 35.00;
+            totalOfUnitsBought += 35.00;
         }
-
-
 
     }
 
     function getUnitsAvailable() {
-         return unitsAvailable.toFixed(2);
+        return unitsAvailable.toFixed(2);
     }
 
     /*
@@ -49,19 +53,33 @@ function Electricity(boughtUnits) {
     * other wise return false and do nothing.
     */
     function useAppliance(appliance) {
+        if (unitsAvailable > 0) {
+            if (appliance === 'Stove') {
+                unitsAvailable -= 10;
+            }
+            if (appliance === 'Kettle') {
+                unitsAvailable -= 5;
+            }
+            if (appliance === 'TV') {
+                unitsAvailable -= 3;
+            }
+            if (appliance === 'Fridge') {
+                unitsAvailable -= 13;
+            }
+        }
         
     }
 
     function advanceTaken() {
     }
 
-    let amount = 0;
-
     function totalAmountSpent() {
         return currentAmountOfElectrity.toFixed(2);
     }
 
     function totalUnitsBought(){
+        // return the not decremented units bought
+        return totalOfUnitsBought.toFixed(2);
     }
 
     return {
