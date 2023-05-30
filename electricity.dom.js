@@ -5,6 +5,7 @@
 const unitsAvailable = document.querySelector('.unitsAvailable');
 const unitsBought = document.querySelector('.totalUnits');
 const totalAmountSpent = document.querySelector('.totalAmount');
+const advanceAmount = document.querySelector('.advance');
 
 // buttons
 
