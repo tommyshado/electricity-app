@@ -36,7 +36,7 @@ if (localStorage['amountSpent']) {
 }
 
 // Factory Function instance 
-const electricity =  Electricity(boughtUnits);
+const electricity =  Electricity(boughtUnits, unitsAval);
 
 
 // DOM events here 
@@ -53,8 +53,22 @@ buttonForBuying.addEventListener('click', function() {
         totalAmountSpent.innerText = electricity.totalAmountSpent();
 
         // storing units bought in the local storage
-        localStorage.setItem('unitsBought', unitsBought.innerText);
         localStorage.setItem('unitsAvailable', unitsAvailable.innerText);
         localStorage.setItem('amountSpent', totalAmountSpent.innerText);
     };
+});
+
+usageOfElectricity.addEventListener('click', function() {
+    // get the reference to the radio buttons
+    const appliacesUsage = document.querySelector("input[name='useElectricity']:checked");
+
+    // checking if the client is using the appliance 
+    if (appliacesUsage) {
+        // client is using the appliance
+        electricity.useAppliance(appliacesUsage.value);
+        // decrementing the unitsAvailable inner units
+        unitsAvailable.innerText = electricity.getUnitsAvailable();
+        // local storage
+        localStorage['unitsAvailable'] = unitsAvailable.innerText;
+    }
 });
