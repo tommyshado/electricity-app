@@ -47,7 +47,7 @@ If the advance has been used show a green tick. An advance can only be used once
 
 ## Add localStorage
 
-Once the widget is done store the electricity balance in localStorage. Be sure  that the data is shown correctly after a refresh. The advance should be stored in localStorage - in fact all the totals of the app.
+Use localStorage to ensure that the numbers/data shown in the middle section shows correctly after a refresh. 
 
 ## Fork & clone 
 
