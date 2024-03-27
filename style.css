@@ -3,15 +3,6 @@ body {
 	background-color: darkgray
 }
 
-
-.count {
-	font-size: 4em;
-	padding: 0.1em;
-	border: 2px solid;
-	background-color: orchid;
-	border-radius: 0.1em;
-}
-
 .heading {
 	display: inline;
 }
@@ -49,6 +40,10 @@ button {
 
 .hidden {
 	display: none;
+}
+
+.success {
+	color: green;
 }
 
 @media (min-width: 768px) {
